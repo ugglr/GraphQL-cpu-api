@@ -1,0 +1,25 @@
+{
+  "name": "graphql-cpu-api",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000G\u0000r\u0000a\u0000p\u0000h\u0000Q\u0000L\u0000-\u0000c\u0000p\u0000u\u0000-\u0000a\u0000p\u0000i\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugglr/GraphQL-cpu-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ugglr/GraphQL-cpu-api/issues"
+  },
+  "homepage": "https://github.com/ugglr/GraphQL-cpu-api#readme",
+  "dependencies": {
+    "apollo-server": "^2.9.14",
+    "graphql": "^14.5.8",
+    "nodemon": "^2.0.2"
+  }
+}
