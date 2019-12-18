@@ -4,6 +4,7 @@
   "description": "��#\u0000 \u0000G\u0000r\u0000a\u0000p\u0000h\u0000Q\u0000L\u0000-\u0000c\u0000p\u0000u\u0000-\u0000a\u0000p\u0000i\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
