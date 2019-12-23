@@ -1,6 +1,9 @@
+import bcrypt from "bcrypt";
 import { User } from "../../models/User";
 
+// ########################################################################
 // MUTATIONS
+// ########################################################################
 
 // MUTATION: Created a user with the given email and password
 export const createUser = async (_, { email, password }) => {
@@ -27,7 +30,9 @@ export const createUser = async (_, { email, password }) => {
   }
 };
 
+// ########################################################################
 // QUERIES
+// ########################################################################
 
 // QUERY: Returns all Users in the DB
 export const users = async () => {
