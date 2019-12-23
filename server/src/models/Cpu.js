@@ -1,3 +1,10 @@
 import mongoose from "mongoose";
 
-export const Cpu = mongoose.model("Cpu", { modelNumber: String });
+const cpuSchema = new mongoose.Schema({
+  model: {
+    type: String,
+    required: true
+  }
+});
+
+export const Cpu = mongoose.model("Cpu", cpuSchema);
