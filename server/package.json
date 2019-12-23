@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ugglr/GraphQL-cpu-api#readme",
   "dependencies": {
     "apollo-server-express": "^2.9.14",
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
     "mongoose": "^5.8.2"
