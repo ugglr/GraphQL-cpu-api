@@ -11,14 +11,19 @@ export const typeDefs = gql`
   # Mutations
   type Mutation {
     # Adds CPU to db with the given model identifier
-    createCpu(model: String!): Cpu!
+    ## Adds the baseClock in GHz
+    ## Adds cores as an Int
+    createCpu(model: String!, baseClock: Float!, cores: Int!): Cpu!
     # Adds a User to db with the given email and password
     createUser(email: String!, password: String!): User!
   }
   # CPU type
   type Cpu {
+    #ID
     id: ID!
     model: String!
+    baseClock: Float!
+    cores: Int!
   }
   #User type
   type User {
