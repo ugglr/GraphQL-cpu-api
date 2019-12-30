@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Box = styled.div`
   width: 200px;
   padding: 5px 5px;
-  background-color: lightgreen;
+  background-color: lightblue;
 `;
 
 const LAPTOPS = gql`
@@ -27,15 +27,13 @@ const Home = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  console.log(data.laptops);
-
   return (
     <>
       {data.laptops.map(laptop => (
         <Box key={laptop.model}>
-          <p>{laptop.model}</p>
-          <p>{laptop.cpu.model}</p>
-          <p>{laptop.cpu.baseClock} GHz</p>
+          <p>Model: {laptop.model}</p>
+          <p>CPU: {laptop.cpu.model}</p>
+          <p>CPU Base Clock: {laptop.cpu.baseClock} GHz</p>
         </Box>
       ))}
     </>
