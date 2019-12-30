@@ -1,11 +1,11 @@
 // CPU Related resolvers
-import { createCpu, cpus } from "./cpus";
+import { createCpu, getCpuById, cpus } from "./cpus";
 // Laptop Related resolvers
 import { createLaptop, laptops } from "./laptops";
 // User Related resolvers
 import { createUser, users, findUserByEmail } from "./users";
 
 export const resolvers = {
-  Query: { laptops, cpus, users, findUserByEmail },
+  Query: { laptops, cpus, getCpuById, users, findUserByEmail },
   Mutation: { createLaptop, createCpu, createUser }
 };

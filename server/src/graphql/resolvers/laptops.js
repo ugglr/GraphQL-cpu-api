@@ -1,7 +1,23 @@
 import { Laptop } from "../../models/Laptop";
 import { Cpu } from "../../models/Cpu";
 
-export const laptops = async () => Laptop.find();
+export const laptops = async () => {
+  try {
+    let laptops = await Laptop.find();
+    const result = await laptops.map(async laptop => {
+      let cpu = await Cpu.findById({ _id: laptop.cpu });
+      return {
+        ...laptop._doc,
+        cpu: {
+          ...cpu._doc
+        }
+      };
+    });
+    return result;
+  } catch (err) {
+    throw err;
+  }
+};
 
 export const createLaptop = async (_, { model, cpuModel }) => {
   try {
@@ -23,9 +39,14 @@ export const createLaptop = async (_, { model, cpuModel }) => {
       cpu: hasCpu
     });
     // Save Laptop to DB
-    const saveResult = await newLaptop.save();
+    let saveResult = await newLaptop.save();
     // Return the result of the save
-    return saveResult;
+    return {
+      ...saveResult._doc,
+      cpu: {
+        ...hasCpu._doc
+      }
+    };
   } catch (err) {
     throw err;
   }

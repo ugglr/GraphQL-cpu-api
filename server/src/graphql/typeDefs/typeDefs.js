@@ -7,6 +7,8 @@ export const typeDefs = gql`
     laptops: [Laptop!]!
     # Return all CPUs in the database
     cpus: [Cpu!]!
+    # Get CPU by id
+    getCpuById(_id: ID!): Cpu!
     users: [User]!
     findUserByEmail(email: String!): User!
   }
@@ -26,20 +28,20 @@ export const typeDefs = gql`
   # CPU type
   type Cpu {
     #ID
-    id: ID!
+    _id: ID!
     model: String!
     baseClock: Float!
     cores: Int!
   }
   #Laptop
   type Laptop {
-    id: ID!
+    _id: ID!
     model: String!
     cpu: Cpu!
   }
   #User type
   type User {
-    id: ID!
+    _id: ID!
     email: String!
     password: String
   }
