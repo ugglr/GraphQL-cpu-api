@@ -5,7 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Template from "./Template";
 import Home from "./screens/Home";
+import Cpus from "./screens/Cpus";
+import Laptops from "./screens/Laptops";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
@@ -13,7 +18,27 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <Home />
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/cpus">
+          <Template>
+            <Cpus />
+          </Template>
+        </Route>
+        <Route path="/laptops">
+          <Template>
+            <Laptops />
+          </Template>
+        </Route>
+        <Route path="/">
+          <Template>
+            <Home />
+          </Template>
+        </Route>
+      </Switch>
+    </Router>
   </ApolloProvider>
 );
 
