@@ -9,7 +9,7 @@ const laptopSchema = new mongoose.Schema({
   },
   cpu: {
     type: Schema.Types.ObjectId,
-    red: "Cpu"
+    ref: "Cpu"
   }
 });
 

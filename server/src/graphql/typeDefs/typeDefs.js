@@ -3,12 +3,20 @@ import { gql } from "apollo-server-express";
 export const typeDefs = gql`
   #Queries
   type Query {
+    ###### LAPTOP RELATED QUERIES #######
     # Return all Laptops in the database
     laptops: [Laptop!]!
+
+    ###### CPU RELATED QUERIES ##########
     # Return all CPUs in the database
     cpus: [Cpu!]!
     # Get CPU by id
     getCpuById(_id: ID!): Cpu!
+
+    ###### SOCKET RELATED QUERIES #######
+    sockets: [Socket!]!
+
+    ###### USER RELATED QUERIES #########
     users: [User]!
     findUserByEmail(email: String!): User!
   }
@@ -18,6 +26,9 @@ export const typeDefs = gql`
     ## Adds the baseClock in GHz
     ## Adds cores as an Int
     createCpu(model: String!, baseClock: Float!, cores: Int!): Cpu!
+
+    # Adds socket with the given socket
+    createSocket(socket: String!): Socket!
 
     # Adds Laptop with the given model and CPU-model.
     createLaptop(model: String!, cpuModel: String!): Laptop!
@@ -32,6 +43,12 @@ export const typeDefs = gql`
     model: String!
     baseClock: Float!
     cores: Int!
+  }
+  # Socket
+  type Socket {
+    _id: ID!
+    socket: String!
+    cpuSupport: [Cpu!]!
   }
   #Laptop
   type Laptop {
