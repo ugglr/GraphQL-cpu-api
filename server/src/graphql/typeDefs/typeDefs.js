@@ -25,7 +25,12 @@ export const typeDefs = gql`
     # Adds CPU to db with the given model identifier
     ## Adds the baseClock in GHz
     ## Adds cores as an Int
-    createCpu(model: String!, baseClock: Float!, cores: Int!): Cpu!
+    createCpu(
+      model: String!
+      baseClock: Float!
+      cores: Int!
+      socket: String!
+    ): Cpu!
 
     # Adds socket with the given socket
     createSocket(socket: String!): Socket!
@@ -43,6 +48,7 @@ export const typeDefs = gql`
     model: String!
     baseClock: Float!
     cores: Int!
+    socket: Socket!
   }
   # Socket
   type Socket {

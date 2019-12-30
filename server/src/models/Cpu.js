@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+const Schema = mongoose.Schema;
+
 export const cpuSchema = new mongoose.Schema({
   model: {
     type: String,
@@ -12,6 +14,10 @@ export const cpuSchema = new mongoose.Schema({
   cores: {
     type: Number,
     required: true
+  },
+  socket: {
+    type: Schema.Types.ObjectId,
+    ref: "Socket"
   }
 });
 

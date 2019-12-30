@@ -9,6 +9,7 @@ const ContentContainer = styled.div`
   width: 960px;
   overflow: hidden;
 `;
+const Nav = styled.div``;
 
 const Template = props => {
   return (
